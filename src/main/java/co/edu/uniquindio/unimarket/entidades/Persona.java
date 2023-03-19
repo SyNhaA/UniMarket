@@ -5,6 +5,7 @@ import lombok.*;
 import org.hibernate.validator.constraints.Email;
 
 import java.io.Serializable;
+import java.net.PasswordAuthentication;
 
 @Getter
 @Setter
@@ -18,12 +19,6 @@ public class Persona implements Serializable {
     @EqualsAndHashCode.Include
     private String cedula;
 
-    private Cuenta cuenta;
-
-    @Column
-    @Enumerated(value = EnumType.STRING)
-    private TipoPersona tipoPersona;
-
     @Column(length = 100)
     private String nombre;
 
@@ -31,16 +26,6 @@ public class Persona implements Serializable {
     @Column(length = 50, unique = true)
     private String email;
 
-    @Column(length = 10)
-    private String telefono;
-
-    @Column(length = 100)
-    private String direccion;
-
     @Column
-    @Enumerated(value = EnumType.STRING)
-    private TipoGenero genero;
-
-
-
+    private String contraseña;
 }

@@ -5,6 +5,7 @@ import lombok.*;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.List;
 
 @Getter
 @Setter
@@ -12,25 +13,32 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Entity
-public class Venta implements Serializable{
+public class Compra implements Serializable{
 
     @Id
     @EqualsAndHashCode.Include
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    private Cuenta cuenta;
+    @Column
+    @ManyToOne
+    private Usuario usuario;
 
-    @Column(length = 200)
-    private String descripcion;
+    @Column
+    @OneToMany(mappedBy = "compra")
+    private List<DetalleCompra> listaDetalleCompra;
 
     @Column(nullable = false)
-    private LocalDate fechaVenta;
+    private LocalDate fechaCompra;
 
     @Column
     private double total;
 
     @Column
     @Enumerated(value = EnumType.STRING)
-    private EstadoVenta estadoVenta;
+    private EstadoCompra estadoCompra;
+
+    @Column
+    @Enumerated(value = EnumType.STRING)
+    private MedioPago medioPago;
 }

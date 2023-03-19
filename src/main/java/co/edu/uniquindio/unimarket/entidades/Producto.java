@@ -1,13 +1,14 @@
 package co.edu.uniquindio.unimarket.entidades;
 
+import co.edu.uniquindio.unimarket.ProductoModerador;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Future;
 import jakarta.validation.constraints.Positive;
 import lombok.*;
 
-import java.awt.*;
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.List;
 
 @Getter
 @Setter
@@ -23,12 +24,32 @@ public class Producto implements Serializable {
     private int codigo;
 
     @Column
-    private String codigo_vendedor;
+    @ManyToOne
+    private Usuario suario;
 
     @Column
-    @ManyToOne
-    private Categoria categoria;
+    @OneToMany(mappedBy = "producto")
+    private List<ProductoModerador> listaProductoModerador;
 
+    @Column
+    @OneToMany(mappedBy = "producto")
+    private List<Comentario> listaComentario;
+
+    @Column
+    @OneToMany(mappedBy = "producto")
+    private List<Favorito> listaFavorito;
+
+    @Column
+    @OneToMany(mappedBy = "producto")
+    private List<DetalleCompra> listaDetalleCompra;
+
+    @Column
+    @OneToMany(mappedBy = "producto")
+    private List<Categoria> listaCategorias;
+
+    @Column
+    @OneToMany(mappedBy = "producto")
+    private List<Imagen> listaImagenes;
 
     @Column(length = 100, nullable = false)
     private String nombre;

@@ -1,13 +1,11 @@
 package co.edu.uniquindio.unimarket.entidades;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
+import org.w3c.dom.Text;
 
-import co.edu.uniquindio.unimarket.entidades.Cuenta;
 import java.io.Serializable;
+import java.util.Date;
 
 @Getter
 @Setter
@@ -22,4 +20,17 @@ public class Comentario implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
+    @Column
+    @ManyToOne
+    private Usuario usuario;
+
+    @Column
+    @ManyToOne
+    private Producto producto;
+
+    @Column
+    private String mensaje;
+
+    @Column
+    private Date fechaCreacion;
 }
