@@ -1,11 +1,10 @@
 package co.edu.uniquindio.unimarket.entidades;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 
 @Getter
 @Setter
@@ -17,6 +16,21 @@ public class Venta implements Serializable{
 
     @Id
     @EqualsAndHashCode.Include
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
+    private Cuenta cuenta;
+
+    @Column(length = 200)
+    private String descripcion;
+
+    @Column(nullable = false)
+    private LocalDate fechaVenta;
+
+    @Column
+    private double total;
+
+    @Column
+    @Enumerated(value = EnumType.STRING)
+    private EstadoVenta estadoVenta;
 }
