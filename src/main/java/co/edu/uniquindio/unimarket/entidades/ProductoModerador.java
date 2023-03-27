@@ -7,6 +7,8 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.io.Serializable;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Getter
@@ -22,21 +24,19 @@ public class ProductoModerador implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column
     @Enumerated(value = EnumType.STRING)
     private Estado estado;
 
-    @Column
     @ManyToOne
     private Moderador moderador;
 
-    @Column
     @ManyToOne
     private Producto producto;
 
-    @Column
+    @Lob
+    @Column(nullable = false)
     private String motivo;
 
-    @Column
-    private Date fecha;
+    @Column(nullable = false)
+    private LocalDateTime fecha;
 }

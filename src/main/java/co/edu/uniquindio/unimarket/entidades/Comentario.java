@@ -2,10 +2,10 @@ package co.edu.uniquindio.unimarket.entidades;
 
 import jakarta.persistence.*;
 import lombok.*;
-import org.w3c.dom.Text;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDateTime;
+
 
 @Getter
 @Setter
@@ -20,11 +20,9 @@ public class Comentario implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column
     @ManyToOne
     private Usuario usuario;
 
-    @Column
     @ManyToOne
     private Producto producto;
 
@@ -32,5 +30,5 @@ public class Comentario implements Serializable {
     private String mensaje;
 
     @Column
-    private Date fechaCreacion;
+    private LocalDateTime fechaCreacion;
 }

@@ -7,16 +7,21 @@ import org.hibernate.validator.constraints.Email;
 import java.io.Serializable;
 import java.net.PasswordAuthentication;
 
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+@MappedSuperclass
 @Getter
 @Setter
 @ToString
 @NoArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-@Entity
 public class Persona implements Serializable {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
+    private int codigo;
+
+    @Column(unique = true)
     private String cedula;
 
     @Column(length = 100)

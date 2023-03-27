@@ -18,11 +18,9 @@ public class DetalleCompra implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column
     @ManyToOne
     private Compra compra;
 
-    @Column
     @ManyToOne
     private Producto producto;
 

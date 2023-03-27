@@ -1,6 +1,6 @@
 package co.edu.uniquindio.unimarket.dto;
 
-import co.edu.uniquindio.unimarket.modelo.MetodoPago;
+import co.edu.uniquindio.unimarket.entidades.MedioPago;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -13,6 +13,6 @@ import java.util.List;
 public class CompraDTO {
 
     private int codigoUsuario;
-    private MetodoPago metodoPago;
+    private MedioPago medioPago;
     private List<DetalleCompraDTO> detalleCompraDTO;
 }

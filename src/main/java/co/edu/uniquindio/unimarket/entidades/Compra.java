@@ -5,6 +5,7 @@ import lombok.*;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Getter
@@ -20,16 +21,14 @@ public class Compra implements Serializable{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column
     @ManyToOne
     private Usuario usuario;
 
-    @Column
     @OneToMany(mappedBy = "compra")
     private List<DetalleCompra> listaDetalleCompra;
 
     @Column(nullable = false)
-    private LocalDate fechaCompra;
+    private LocalDateTime fechaCompra;
 
     @Column
     private double total;
