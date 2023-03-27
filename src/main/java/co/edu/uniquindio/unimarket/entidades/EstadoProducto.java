@@ -1,6 +1,6 @@
 package co.edu.uniquindio.unimarket.entidades;
 
-public enum Estado {
+public enum EstadoProducto {
 
     estado
 }

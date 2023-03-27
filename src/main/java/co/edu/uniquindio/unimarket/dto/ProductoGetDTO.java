@@ -1,6 +1,7 @@
 package co.edu.uniquindio.unimarket.dto;
 
 import co.edu.uniquindio.unimarket.entidades.Categoria;
+import co.edu.uniquindio.unimarket.entidades.EstadoProducto;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -15,7 +16,7 @@ public class ProductoGetDTO {
 
     private int codigo;
 
-    private boolean estado;
+    private EstadoProducto estado;
 
     private LocalDateTime fechaLimite;
 

@@ -65,4 +65,6 @@ public class Producto implements Serializable {
     @Future
     @Column(nullable = false)
     private LocalDateTime fechaVencimiento;
+
+    private EstadoProducto estadoProducto;
 }

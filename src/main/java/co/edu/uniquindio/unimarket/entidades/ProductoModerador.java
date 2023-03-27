@@ -1,15 +1,10 @@
 package co.edu.uniquindio.unimarket.entidades;
 
-import co.edu.uniquindio.unimarket.entidades.Estado;
-import co.edu.uniquindio.unimarket.entidades.Moderador;
-import co.edu.uniquindio.unimarket.entidades.Producto;
 import jakarta.persistence.*;
 import lombok.*;
 
 import java.io.Serializable;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.Date;
 
 @Getter
 @Setter
@@ -25,7 +20,7 @@ public class ProductoModerador implements Serializable {
     private int id;
 
     @Enumerated(value = EnumType.STRING)
-    private Estado estado;
+    private EstadoProducto estadoProducto;
 
     @ManyToOne
     private Moderador moderador;
