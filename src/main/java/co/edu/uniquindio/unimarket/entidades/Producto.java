@@ -1,6 +1,5 @@
 package co.edu.uniquindio.unimarket.entidades;
 
-import co.edu.uniquindio.unimarket.ProductoModerador;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Future;
 import jakarta.validation.constraints.Positive;
