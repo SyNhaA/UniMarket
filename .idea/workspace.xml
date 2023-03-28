@@ -4,23 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d2081bb6-dfc1-48e2-b5d9-42a40158ad4a" name="Changes" comment="Se crearon los DTO">
-      <change beforePath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+    <list default="true" id="d2081bb6-dfc1-48e2-b5d9-42a40158ad4a" name="Changes" comment="Repos y Servicios">
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/edu/uniquindio/unimarket/entidades/Comentario.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/edu/uniquindio/unimarket/entidades/Comentario.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/edu/uniquindio/unimarket/entidades/Compra.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/edu/uniquindio/unimarket/entidades/Compra.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/edu/uniquindio/unimarket/entidades/Persona.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/edu/uniquindio/unimarket/entidades/Persona.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/edu/uniquindio/unimarket/entidades/Producto.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/edu/uniquindio/unimarket/entidades/Producto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/unimarket/dto/ProductoGetDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/unimarket/dto/ProductoGetDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/unimarket/entidades/Estado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/unimarket/entidades/EstadoProducto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/unimarket/entidades/Producto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/unimarket/entidades/Producto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/unimarket/entidades/ProductoModerador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/unimarket/entidades/ProductoModerador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/unimarket/servicios/interfaces/ProductoServicio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/unimarket/servicios/interfaces/ProductoServicio.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +29,7 @@
       <list>
         <option value="Enum" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -59,22 +47,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Ws/UNIVERSIDAD/2023-1/Programacion_Avanzada/UniMarket/UniMarket/src/main/java/co/edu/uniquindio/unimarket/servicios/interfaces",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "spring.configuration.checksum": "052e3d1def8abe7f32fd4fa8a25bc71a"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Ws/UNIVERSIDAD/2023-1/Programacion_Avanzada/UniMarket/UniMarket/src/main/java/co/edu/uniquindio/unimarket/servicios/interfaces&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;052e3d1def8abe7f32fd4fa8a25bc71a&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="co.edu.uniquindio.unimarket.dto" />
@@ -127,7 +115,8 @@
       <workItem from="1679053387253" duration="74000" />
       <workItem from="1679157053904" duration="6711000" />
       <workItem from="1679853850234" duration="11035000" />
-      <workItem from="1679927378136" duration="3435000" />
+      <workItem from="1679927378136" duration="3996000" />
+      <workItem from="1680045700438" duration="693000" />
     </task>
     <task id="LOCAL-00001" summary="Corrigiendo errores">
       <created>1679196508756</created>
@@ -171,7 +160,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679929290821</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Repos y Servicios">
+      <created>1679930907204</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1679930907204</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -193,6 +189,7 @@
     <MESSAGE value="Creaciones de todas las relaciones" />
     <MESSAGE value="Se crearon los paquetes" />
     <MESSAGE value="Se crearon los DTO" />
-    <option name="LAST_COMMIT_MESSAGE" value="Se crearon los DTO" />
+    <MESSAGE value="Repos y Servicios" />
+    <option name="LAST_COMMIT_MESSAGE" value="Repos y Servicios" />
   </component>
 </project>
