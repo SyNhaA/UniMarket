@@ -9,4 +9,7 @@ import javax.naming.InterruptedNamingException;
 @Repository
 public interface DetalleCompraRepo extends JpaRepository<DetalleCompra, InterruptedNamingException> {
 
+    //Detalle compra segun id(int)
+    DetalleCompra findById(int id);
+
 }

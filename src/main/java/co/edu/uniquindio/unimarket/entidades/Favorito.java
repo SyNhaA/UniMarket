@@ -1,8 +1,6 @@
 package co.edu.uniquindio.unimarket.entidades;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 import lombok.*;
 
 @Getter
@@ -14,10 +12,13 @@ import lombok.*;
 public class Favorito {
 
     @Id
+    @EqualsAndHashCode.Include
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+
     @ManyToOne
     private Producto producto;
 
-    @Id
     @ManyToOne
     private Usuario usuario;
 }

@@ -30,7 +30,7 @@ public class Compra implements Serializable{
     @Column(nullable = false)
     private LocalDateTime fechaCompra;
 
-    @Column
+    @Column(nullable = false)
     private double total;
 
     @Column
