@@ -16,67 +16,58 @@ public class ProductoServicioImpl implements ProductoServicio {
     private final ProductoRepo productoRepo;
 
     public ProductoServicioImpl(ProductoRepo productoRepo) {
+
         this.productoRepo = productoRepo;
     }
 
 
     @Override
-    public int crearProducto(ProductoDTO productoDTO) {
+    public int crearProducto(ProductoDTO productoDTO) throws Exception {
         return 0;
     }
 
     @Override
-    public int actualizarProducto(int codigoProducto, ProductoDTO productoDTO) {
+    public int actualizarProducto(int codigoProducto, ProductoDTO productoDTO) throws Exception {
         return 0;
     }
 
     @Override
-    public int actualizarUnidades(int codigoProducto, int unidades) {
+    public int actualizarUnidades(int codigoProducto, int unidades) throws Exception {
         return 0;
     }
 
     @Override
-    public int actualizarEstado(int codigoProducto, EstadoProducto estado) {
+    public int eliminarProducto(int codigoProducto) throws Exception {
         return 0;
     }
 
     @Override
-    public int eliminarProducto(int codigoProducto) {
-        return 0;
-    }
-
-    @Override
-    public ProductoGetDTO obtenerProducto(int codigoProducto) {
+    public ProductoGetDTO obtenerProducto(int codigoProducto) throws Exception {
         return null;
     }
 
     @Override
-    public List<ProductoGetDTO> listarProductosUsuario(int codigoUsuario) {
+    public List<ProductoGetDTO> listarProductosUsuario(int codigoUsuario) throws Exception {
         return null;
     }
 
     @Override
-    public List<ProductoGetDTO> listarProductosCategoria(Categoria categoria) {
+    public List<ProductoGetDTO> listarProductosCategoria(Categoria categoria) throws Exception {
         return null;
     }
 
     @Override
-    public List<ProductoGetDTO> listarProductosPorEstado(EstadoProducto estado) {
+    public List<ProductoGetDTO> listarProductosFavoritos(int codigoUsuario) throws Exception {
         return null;
     }
 
     @Override
-    public List<ProductoGetDTO> listarProductosFavoritos(int codigoUsuario) {
+    public List<ProductoGetDTO> listarProductosNombre(String nombre) throws Exception {
         return null;
     }
 
     @Override
-    public List<ProductoGetDTO> listarProductosNombre(String nombre) {
-        return null;
-    }
-
-    @Override
-    public List<ProductoGetDTO> listarProductosPrecio(float precioMinimo, float precioMaximo) {
+    public List<ProductoGetDTO> listarProductosPrecio(float precioMinimo, float precioMaximo) throws Exception {
         return null;
     }
 }
