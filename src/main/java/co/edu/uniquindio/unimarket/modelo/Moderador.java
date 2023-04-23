@@ -1,4 +1,4 @@
-package co.edu.uniquindio.unimarket.entidades;
+package co.edu.uniquindio.unimarket.modelo;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -11,7 +11,7 @@ import java.util.List;
 @ToString
 @NoArgsConstructor
 @Entity
-public class Moderador extends Persona implements Serializable{
+public class Moderador extends Persona implements Serializable {
 
     @OneToMany(mappedBy = "moderador")
     private List<ProductoModerador> listaProductoModerador;

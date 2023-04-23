@@ -1,4 +1,4 @@
-package co.edu.uniquindio.unimarket.entidades;
+package co.edu.uniquindio.unimarket.modelo;
 
 public enum MedioPago {
     EFECTIVO,TARJETACREDITO,TARJETADEBITO

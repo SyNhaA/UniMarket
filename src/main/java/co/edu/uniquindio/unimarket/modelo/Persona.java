@@ -1,11 +1,10 @@
-package co.edu.uniquindio.unimarket.entidades;
+package co.edu.uniquindio.unimarket.modelo;
 
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.validator.constraints.Email;
 
 import java.io.Serializable;
-import java.net.PasswordAuthentication;
 
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 @MappedSuperclass

@@ -1,6 +1,6 @@
 package co.edu.uniquindio.unimarket.dto;
 
-import co.edu.uniquindio.unimarket.entidades.MedioPago;
+import co.edu.uniquindio.unimarket.modelo.MedioPago;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;

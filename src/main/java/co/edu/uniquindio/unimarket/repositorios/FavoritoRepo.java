@@ -1,8 +1,8 @@
 package co.edu.uniquindio.unimarket.repositorios;
 
-import co.edu.uniquindio.unimarket.entidades.Favorito;
-import co.edu.uniquindio.unimarket.entidades.Producto;
-import co.edu.uniquindio.unimarket.entidades.Usuario;
+import co.edu.uniquindio.unimarket.modelo.Favorito;
+import co.edu.uniquindio.unimarket.modelo.Producto;
+import co.edu.uniquindio.unimarket.modelo.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;

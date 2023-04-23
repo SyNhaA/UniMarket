@@ -1,9 +1,11 @@
-package co.edu.uniquindio.unimarket.entidades;
+package co.edu.uniquindio.unimarket.modelo;
 
 import jakarta.persistence.*;
+
 import lombok.*;
 
 import java.io.Serializable;
+
 
 @Getter
 @Setter
@@ -11,11 +13,10 @@ import java.io.Serializable;
 @NoArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Entity
-public class Categoria implements Serializable {
+public class Imagen implements Serializable {
 
     @Id
-    @EqualsAndHashCode.Include
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column
     private int id;
 
     @ManyToOne

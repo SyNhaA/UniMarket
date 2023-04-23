@@ -1,6 +1,5 @@
-package co.edu.uniquindio.unimarket.entidades;
+package co.edu.uniquindio.unimarket.modelo;
 
 public enum TipoPersona {
-
     CLIENTE, ADMINISTRADOR
 }

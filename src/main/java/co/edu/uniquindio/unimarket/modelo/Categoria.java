@@ -1,11 +1,9 @@
-package co.edu.uniquindio.unimarket.entidades;
+package co.edu.uniquindio.unimarket.modelo;
 
 import jakarta.persistence.*;
 import lombok.*;
 
 import java.io.Serializable;
-import java.time.LocalDateTime;
-
 
 @Getter
 @Setter
@@ -13,7 +11,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Entity
-public class Comentario implements Serializable {
+public class Categoria implements Serializable {
 
     @Id
     @EqualsAndHashCode.Include
@@ -21,14 +19,5 @@ public class Comentario implements Serializable {
     private int id;
 
     @ManyToOne
-    private Usuario usuario;
-
-    @ManyToOne
     private Producto producto;
-
-    @Column(nullable = false)
-    private String mensaje;
-
-    @Column(nullable = false)
-    private LocalDateTime fechaCreacion;
 }
