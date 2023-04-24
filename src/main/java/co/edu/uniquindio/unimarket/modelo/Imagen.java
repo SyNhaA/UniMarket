@@ -1,7 +1,6 @@
 package co.edu.uniquindio.unimarket.modelo;
 
 import jakarta.persistence.*;
-
 import lombok.*;
 
 import java.io.Serializable;
@@ -16,9 +15,14 @@ import java.io.Serializable;
 public class Imagen implements Serializable {
 
     @Id
-    @Column
+    @EqualsAndHashCode.Include
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
+    @Column(length = 200, nullable = false, unique = true)
+    private String url;
+
     @ManyToOne
+    @JoinColumn(nullable = false)
     private Producto producto;
 }

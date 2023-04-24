@@ -7,7 +7,9 @@ import lombok.*;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -23,33 +25,35 @@ public class Producto implements Serializable {
     private int codigo;
 
     @ManyToOne
-    private Usuario usuario;
+    @JoinColumn(nullable = false)
+    private Usuario vendedor;
 
     @OneToMany(mappedBy = "producto")
-    private List<ProductoModerador> listaProductoModerador;
+    private List<ProductoModerador> listaProductosModerador;
 
     @OneToMany(mappedBy = "producto")
-    private List<Comentario> listaComentario;
+    private List<Comentario> listaComentarios;
 
     @OneToMany(mappedBy = "producto")
-    private List<Favorito> listaFavorito;
-
-    @OneToMany(mappedBy = "producto")
-    private List<DetalleCompra> listaDetalleCompra;
-
-    @OneToMany(mappedBy = "producto")
-    private List<Categoria> listaCategorias;
+    private List<DetalleCompra> listaDetalleCompras;
 
     @OneToMany(mappedBy = "producto")
     private List<Imagen> listaImagenes;
 
+    @OneToMany(mappedBy = "producto")
+    private List<Calificacion> listaCalificaciones;
+
+    @ManyToMany(mappedBy = "productosFavoritos")
+    private Set<Usuario> usuariosFavoritos = new HashSet<>();
+
     @Column(length = 100, nullable = false)
     private String nombre;
 
-    @Column
+    @Positive
+    @Column(nullable = false)
     private int unidades;
 
-    @Column(length = 200)
+    @Column(length = 300)
     private String descripcion;
 
     @Positive
@@ -66,5 +70,6 @@ public class Producto implements Serializable {
     @Column(nullable = false)
     private LocalDateTime fechaVencimiento;
 
-    private EstadoProducto estadoProducto;
+    @Enumerated(EnumType.STRING)
+    private Categoria categoria;
 }

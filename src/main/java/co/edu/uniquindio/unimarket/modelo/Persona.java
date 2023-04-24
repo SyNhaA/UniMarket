@@ -1,8 +1,8 @@
 package co.edu.uniquindio.unimarket.modelo;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
 import lombok.*;
-import org.hibernate.validator.constraints.Email;
 
 import java.io.Serializable;
 
@@ -16,20 +16,17 @@ import java.io.Serializable;
 public class Persona implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
-    private int codigo;
-
-    @Column(unique = true)
+    @Column(length = 10)
     private String cedula;
 
-    @Column(length = 100)
+    @Column(length = 100, nullable = false)
     private String nombre;
 
     @Email
-    @Column(length = 50, unique = true)
+    @Column(length = 100, unique = true, nullable = false)
     private String email;
 
-    @Column
-    private String contraseña;
+    @Column(length = 30, nullable = false)
+    private String contrasenia;
 }

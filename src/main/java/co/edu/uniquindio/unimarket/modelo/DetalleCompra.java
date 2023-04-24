@@ -1,6 +1,7 @@
 package co.edu.uniquindio.unimarket.modelo;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Positive;
 import lombok.*;
 
 import java.io.Serializable;
@@ -19,14 +20,18 @@ public class DetalleCompra implements Serializable {
     private int id;
 
     @ManyToOne
+    @JoinColumn(nullable = false)
     private Compra compra;
 
     @ManyToOne
+    @JoinColumn(nullable = false)
     private Producto producto;
 
-    @Column
+    @Positive
+    @Column(nullable = false)
     private int unidades;
 
-    @Column
+    @Positive
+    @Column(nullable = false)
     private int precioProducto;
 }

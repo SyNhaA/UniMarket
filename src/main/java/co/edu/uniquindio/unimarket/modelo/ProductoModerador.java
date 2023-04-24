@@ -19,13 +19,15 @@ public class ProductoModerador implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Enumerated(value = EnumType.STRING)
+    @Enumerated(EnumType.STRING)
     private EstadoProducto estadoProducto;
 
     @ManyToOne
+    @JoinColumn(nullable = false)
     private Moderador moderador;
 
     @ManyToOne
+    @JoinColumn(nullable = false)
     private Producto producto;
 
     @Lob

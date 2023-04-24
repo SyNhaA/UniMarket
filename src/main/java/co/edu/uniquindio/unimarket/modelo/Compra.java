@@ -1,6 +1,7 @@
 package co.edu.uniquindio.unimarket.modelo;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Positive;
 import lombok.*;
 
 import java.io.Serializable;
@@ -21,22 +22,19 @@ public class Compra implements Serializable {
     private int id;
 
     @ManyToOne
+    @JoinColumn(nullable = false)
     private Usuario usuario;
 
     @OneToMany(mappedBy = "compra")
-    private List<DetalleCompra> listaDetalleCompra;
+    private List<DetalleCompra> listaDetalleCompras;
 
     @Column(nullable = false)
     private LocalDateTime fechaCompra;
 
+    @Positive
     @Column(nullable = false)
     private double total;
 
-    @Column
-    @Enumerated(value = EnumType.STRING)
-    private EstadoCompra estadoCompra;
-
-    @Column
     @Enumerated(value = EnumType.STRING)
     private MedioPago medioPago;
 }

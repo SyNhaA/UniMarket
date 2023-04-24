@@ -21,12 +21,14 @@ public class Comentario implements Serializable {
     private int id;
 
     @ManyToOne
+    @JoinColumn(nullable = false)
     private Usuario usuario;
 
     @ManyToOne
+    @JoinColumn(nullable = false)
     private Producto producto;
 
-    @Column(nullable = false)
+    @Column(nullable = false, length = 200)
     private String mensaje;
 
     @Column(nullable = false)
