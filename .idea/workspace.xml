@@ -4,35 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d2081bb6-dfc1-48e2-b5d9-42a40158ad4a" name="Changes" comment="Se añaden las clases repo">
-      <change beforePath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/edu/uniquindio/unimarket/entidades/Estado.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/edu/uniquindio/unimarket/entidades/Favorito.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/edu/uniquindio/unimarket/entidades/Favorito.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/edu/uniquindio/unimarket/entidades/Producto.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/edu/uniquindio/unimarket/entidades/Producto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/edu/uniquindio/unimarket/entidades/ProductoModerador.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/edu/uniquindio/unimarket/entidades/ProductoModerador.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/unimarket/dto/UsuarioDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/unimarket/dto/UsuarioDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/unimarket/entidades/Comentario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/unimarket/entidades/Comentario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/unimarket/entidades/Compra.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/unimarket/entidades/Compra.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/unimarket/entidades/Favorito.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/unimarket/entidades/Favorito.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/unimarket/repositorios/CategoriaRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/unimarket/repositorios/CategoriaRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/unimarket/repositorios/ComentarioRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/unimarket/repositorios/ComentarioRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/unimarket/repositorios/CompraRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/unimarket/repositorios/CompraRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/unimarket/repositorios/DetalleCompraRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/unimarket/repositorios/DetalleCompraRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/unimarket/repositorios/FavoritoRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/unimarket/repositorios/FavoritoRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/unimarket/repositorios/ImagenRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/unimarket/repositorios/ImagenRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/unimarket/repositorios/UsuarioRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/unimarket/repositorios/UsuarioRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/unimarket/servicios/implementacion/ProductoServicioImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/unimarket/servicios/implementacion/ProductoServicioImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/unimarket/servicios/interfaces/ProductoServicio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/unimarket/servicios/interfaces/ProductoServicio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/unimarket/servicios/interfaces/UsuarioServicio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/unimarket/servicios/interfaces/UsuarioServicio.java" afterDir="false" />
-    </list>
+    <list default="true" id="d2081bb6-dfc1-48e2-b5d9-42a40158ad4a" name="Changes" comment="Se añaden Querys a los repos" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -144,7 +116,7 @@
       <workItem from="1681097354086" duration="785000" />
       <workItem from="1681423604812" duration="1949000" />
       <workItem from="1681757326241" duration="491000" />
-      <workItem from="1681847911927" duration="2382000" />
+      <workItem from="1681847911927" duration="2604000" />
     </task>
     <task id="LOCAL-00001" summary="Corrigiendo errores">
       <created>1679196508756</created>
@@ -202,7 +174,21 @@
       <option name="project" value="LOCAL" />
       <updated>1680046426638</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Se añaden Querys a los repos">
+      <created>1681850498124</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1681850498124</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Se añaden Querys a los repos">
+      <created>1681850520936</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1681850520936</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -226,6 +212,7 @@
     <MESSAGE value="Se crearon los DTO" />
     <MESSAGE value="Repos y Servicios" />
     <MESSAGE value="Se añaden las clases repo" />
-    <option name="LAST_COMMIT_MESSAGE" value="Se añaden las clases repo" />
+    <MESSAGE value="Se añaden Querys a los repos" />
+    <option name="LAST_COMMIT_MESSAGE" value="Se añaden Querys a los repos" />
   </component>
 </project>
