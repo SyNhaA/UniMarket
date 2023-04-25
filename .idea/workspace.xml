@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d2081bb6-dfc1-48e2-b5d9-42a40158ad4a" name="Changes" comment="Se añaden Querys a los repos" />
+    <list default="true" id="d2081bb6-dfc1-48e2-b5d9-42a40158ad4a" name="Changes" comment="aksk" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -117,6 +117,7 @@
       <workItem from="1681423604812" duration="1949000" />
       <workItem from="1681757326241" duration="491000" />
       <workItem from="1681847911927" duration="2604000" />
+      <workItem from="1682350568901" duration="115000" />
     </task>
     <task id="LOCAL-00001" summary="Corrigiendo errores">
       <created>1679196508756</created>
@@ -188,7 +189,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681850520936</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="aksk">
+      <created>1682350608548</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1682350608548</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -213,6 +221,7 @@
     <MESSAGE value="Repos y Servicios" />
     <MESSAGE value="Se añaden las clases repo" />
     <MESSAGE value="Se añaden Querys a los repos" />
-    <option name="LAST_COMMIT_MESSAGE" value="Se añaden Querys a los repos" />
+    <MESSAGE value="aksk" />
+    <option name="LAST_COMMIT_MESSAGE" value="aksk" />
   </component>
 </project>
