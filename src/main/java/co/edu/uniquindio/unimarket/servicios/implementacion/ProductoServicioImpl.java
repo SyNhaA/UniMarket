@@ -2,8 +2,7 @@ package co.edu.uniquindio.unimarket.servicios.implementacion;
 
 import co.edu.uniquindio.unimarket.dto.ProductoDTO;
 import co.edu.uniquindio.unimarket.dto.ProductoGetDTO;
-import co.edu.uniquindio.unimarket.entidades.Categoria;
-import co.edu.uniquindio.unimarket.entidades.EstadoProducto;
+import co.edu.uniquindio.unimarket.modelo.Categoria;
 import co.edu.uniquindio.unimarket.repositorios.ProductoRepo;
 import co.edu.uniquindio.unimarket.servicios.interfaces.ProductoServicio;
 import org.springframework.stereotype.Service;

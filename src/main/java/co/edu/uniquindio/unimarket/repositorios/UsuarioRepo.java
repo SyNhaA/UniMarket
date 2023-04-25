@@ -1,17 +1,14 @@
 package co.edu.uniquindio.unimarket.repositorios;
 
-import co.edu.uniquindio.unimarket.entidades.Usuario;
+import co.edu.uniquindio.unimarket.modelo.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface UsuarioRepo extends JpaRepository<Usuario, Integer> {
+public interface UsuarioRepo extends JpaRepository<Usuario, String> {
 
     @Query("select u from Usuario u where u.email = :correo")
     Usuario buscarUsuario(String correo);
-
-    @Query("")
-    Usuario x(String x);
 
 }

@@ -1,6 +1,6 @@
 package co.edu.uniquindio.unimarket.repositorios;
 
-import co.edu.uniquindio.unimarket.entidades.Comentario;
+import co.edu.uniquindio.unimarket.modelo.Comentario;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;

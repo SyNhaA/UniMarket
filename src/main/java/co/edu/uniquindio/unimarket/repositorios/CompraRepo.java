@@ -1,7 +1,7 @@
 package co.edu.uniquindio.unimarket.repositorios;
 
-import co.edu.uniquindio.unimarket.entidades.Compra;
-import co.edu.uniquindio.unimarket.entidades.Usuario;
+import co.edu.uniquindio.unimarket.modelo.Compra;
+import co.edu.uniquindio.unimarket.modelo.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
