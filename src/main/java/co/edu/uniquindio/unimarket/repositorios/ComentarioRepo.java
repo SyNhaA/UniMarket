@@ -5,31 +5,30 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.List;
 
 @Repository
 public interface ComentarioRepo extends JpaRepository<Comentario, Integer> {
 
+    // Query para listar los comentarios de un usuario
+    @Query("select c from Comentario c where c.usuario.email = :correo")
+    List<Comentario> listarComentariosUsuario(String correo);
 
-    //Comentario segun el codigo(int) del comentario
-    Comentario findByCodigo(int codigo);
+    // Query para listar los comentarios de un producto
+    @Query("select c from Comentario c where c.producto.id = :idProducto")
+    List<Comentario> listarComentariosProducto(Integer idProducto);
 
-    //Lista de comentarios de un usuario, cedula(int) del usuario
-    @Query("select c from Comentario c where c.usuario.cedula = :idUsuario")
-    List<Comentario> obtenerComentariosDeUsuario(String idUsuario);
+    // Query para listar los comentarios de un producto ordenados por fecha de creacion mas reciente
+    @Query("select c from Comentario c where c.producto.id = :idProducto order by c.fechaCreacion desc")
+    List<Comentario> listarComentariosProductoOrdenadosFecha(Integer idProducto);
 
+    // Query para listar los comentarios de un producto ordenados por fecha de creacion mas antigua
+    @Query("select c from Comentario c where c.producto.id = :idProducto order by c.fechaCreacion asc")
+    List<Comentario> listarComentariosProductoOrdenadosFechaAsc(Integer idProducto);
 
-    //Lista de comentarios de un producto, codigo(int) del producto
-    @Query("select c from Comentario c where c.producto.codigo = :idProducto")
-    List<Comentario> obtenerComentariosDeProducto(int idProducto);
-
-    //Lista de comentario segun fecha de creacion
-    List<Comentario> findByFechaCreacion(LocalDateTime fechaCreacion);
-
-    //Lista de comentarios en un rango de fechas
-    @Query("select c from Comentario c where c.fechaCreacion >= :fechaInicio and c.fechaCreacion <= :fechaFin")
-    List<Comentario> obtenerComentariosPorRangoDeFechas(LocalDateTime fechaInicio, LocalDateTime fechaFin);
-
+    // Query para listar los comentarios de un producto en un rango de fechas
+    @Query("select c from Comentario c where c.producto.id = :idProducto and c.fechaCreacion between :fechaInicio and :fechaFin")
+    List<Comentario> listarComentariosProductoRangoFechas(Integer idProducto, LocalDate fechaInicio, LocalDate fechaFin);
 
 }

@@ -22,7 +22,7 @@ public class Producto implements Serializable {
     @Id
     @EqualsAndHashCode.Include
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int codigo;
+    private int id;
 
     @ManyToOne
     @JoinColumn(nullable = false)
@@ -41,7 +41,7 @@ public class Producto implements Serializable {
     private List<Imagen> listaImagenes;
 
     @OneToMany(mappedBy = "producto")
-    private List<Calificacion> listaCalificaciones;
+    private List<CalificacionProducto> listaCalificaciones;
 
     @ManyToMany(mappedBy = "productosFavoritos")
     private Set<Usuario> usuariosFavoritos = new HashSet<>();

@@ -6,25 +6,26 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.List;
 
 @Repository
 public interface CompraRepo extends JpaRepository<Compra, Integer> {
 
-    //Compra segun el id
-    Compra findById(int id);
+    // Query para listar las compras de un usuario
+    @Query("select c from Compra c where c.usuario.email = :correo")
+    List<Compra> listarComprasUsuario(String correo);
 
+    // Query para listar las compras de un usuario en un rango de fechas
+    @Query("select c from Compra c where c.usuario.email = :correo and c.fechaCompra between :fechaInicio and :fechaFin")
+    List<Compra> listarComprasUsuarioEntreFechas(String correo, LocalDate fechaInicio, LocalDate fechaFin);
 
-    //Usuario segun un id(int) de la compra
-    @Query("select u from Usuario u inner join u.listaCompras c where c.id = :compraId")
-    Usuario findByCompraId(int compraId);
+    // Query para listar las compras de un usuario entre un rango de precios
+    @Query("select c from Compra c where c.usuario.email = :correo and c.total between :precioInicio and :precioFin")
+    List<Compra> listarComprasUsuarioEntrePrecios(String correo, double precioInicio, double precioFin);
 
-    //Lista de compra segun fecha de compra
-    @Query("select c from Compra c where c.fechaCompra = :fechaCompra")
-    List<Compra> findByFechaCompra(LocalDateTime fechaCompra);
+    // Query para listar los usuarios que han comprado un producto
+    @Query("select c.usuario from Compra c join c.listaDetalleCompras dc where dc.producto.id = :idProducto")
+    List<Usuario> listarUsuariosCompradoresProducto(int idProducto);
 
-    //Lista de comprar con un total mayor a total(double)
-    @Query("select c from Compra c where c.total > :total")
-    List<Compra> findByTotalGreaterThan(double total);
 }

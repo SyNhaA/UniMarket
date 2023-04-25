@@ -6,6 +6,7 @@ import jakarta.validation.constraints.Min;
 import lombok.*;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
 
 
 @Getter
@@ -14,7 +15,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Entity
-public class Calificacion implements Serializable {
+public class CalificacionProducto implements Serializable {
 
         @Id
         @EqualsAndHashCode.Include
@@ -36,4 +37,7 @@ public class Calificacion implements Serializable {
 
         @Column(length = 200)
         private String comentario;
+
+        @Column(nullable = false)
+        private LocalDateTime fecha;
 }
