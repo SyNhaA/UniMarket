@@ -36,5 +36,6 @@ public class Compra implements Serializable {
     private double total;
 
     @Enumerated(value = EnumType.STRING)
+    @Column(nullable = false, length = 50)
     private MedioPago medioPago;
 }

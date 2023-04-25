@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import javax.naming.InterruptedNamingException;
 
 @Repository
-public interface DetalleCompraRepo extends JpaRepository<DetalleCompra, InterruptedNamingException> {
+public interface DetalleCompraRepo extends JpaRepository<DetalleCompra, Integer> {
 
     //Detalle compra segun id(int)
     DetalleCompra findById(int id);

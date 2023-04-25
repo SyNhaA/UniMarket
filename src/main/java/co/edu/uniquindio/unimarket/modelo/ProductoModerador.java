@@ -20,6 +20,7 @@ public class ProductoModerador implements Serializable {
     private int id;
 
     @Enumerated(EnumType.STRING)
+    @Column(nullable = false, length = 20)
     private EstadoProducto estadoProducto;
 
     @ManyToOne

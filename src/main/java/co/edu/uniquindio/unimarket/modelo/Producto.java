@@ -53,7 +53,7 @@ public class Producto implements Serializable {
     @Column(nullable = false)
     private int unidades;
 
-    @Column(length = 300)
+    @Column(nullable = false, length = 300)
     private String descripcion;
 
     @Positive
@@ -71,5 +71,6 @@ public class Producto implements Serializable {
     private LocalDateTime fechaVencimiento;
 
     @Enumerated(EnumType.STRING)
+    @Column(nullable = false, length = 30)
     private Categoria categoria;
 }

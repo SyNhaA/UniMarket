@@ -33,5 +33,5 @@ public class DetalleCompra implements Serializable {
 
     @Positive
     @Column(nullable = false)
-    private int precioProducto;
+    private double precioProducto;
 }
