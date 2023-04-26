@@ -11,21 +11,16 @@ import org.hibernate.validator.constraints.Length;
 @AllArgsConstructor
 @Getter
 @Setter
-public class ComentarioDTO {
+public class ImagenDTO {
 
     @NotNull
     @NotBlank
-    @Length(max = 200, message = "El mensaje debe tener máximo 200 caracteres")
-    private String mensaje;
+    @Length(max = 200, message = "La url debe tener máximo 200 caracteres")
+    private String url;
 
     @NotNull
     @NotBlank
-    @Length(max = 10, message = "La cedula del usuario debe tener máximo 10 caracteres")
-    private String cedulaUsuario;
-
-    @NotNull
-    @NotBlank
-    @Positive(message = "El codigo del producto debe ser positivo")
+    @Positive(message = "El código del producto debe ser positivo")
     private int codigoProducto;
 
 }

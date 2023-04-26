@@ -16,7 +16,9 @@ public class ProductoGetDTO {
 
     private int codigo;
 
-    private EstadoProducto estado;
+    private boolean activo;
+
+    private LocalDateTime fechaCreado;
 
     private LocalDateTime fechaLimite;
 
@@ -26,11 +28,11 @@ public class ProductoGetDTO {
 
     private int unidades;
 
-    private float precio;
+    private double precio;
 
-    private int codigoVendedor;
+    private String codigoVendedor;
 
-    private List<String> imagenes;
+    private List<ImagenDTO> imagenes;
 
-    private List<Categoria> categorias;
+    private Categoria categorias;
 }

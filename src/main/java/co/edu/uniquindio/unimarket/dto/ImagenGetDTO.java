@@ -5,22 +5,15 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-import java.time.LocalDateTime;
-
 @AllArgsConstructor
 @Getter
 @Setter
 @ToString
-public class ComentarioGetDTO {
+public class ImagenGetDTO {
 
-    private int codigo;
+    private int id;
 
-    private LocalDateTime fecha;
-
-    private String mensaje;
-
-    private String codigoUsuario;
+    private String url;
 
     private int codigoProducto;
-
 }

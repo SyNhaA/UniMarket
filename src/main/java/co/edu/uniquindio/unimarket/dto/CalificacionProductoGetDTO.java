@@ -11,13 +11,15 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @ToString
-public class ComentarioGetDTO {
+public class CalificacionProductoGetDTO {
 
-    private int codigo;
+    private int id;
 
     private LocalDateTime fecha;
 
-    private String mensaje;
+    private int puntuacion;
+
+    private String comentario;
 
     private String codigoUsuario;
 

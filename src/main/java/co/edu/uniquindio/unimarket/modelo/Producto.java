@@ -2,7 +2,7 @@ package co.edu.uniquindio.unimarket.modelo;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Future;
-import jakarta.validation.constraints.Positive;
+import jakarta.validation.constraints.PositiveOrZero;
 import lombok.*;
 
 import java.io.Serializable;
@@ -49,14 +49,14 @@ public class Producto implements Serializable {
     @Column(length = 100, nullable = false)
     private String nombre;
 
-    @Positive
+    @PositiveOrZero
     @Column(nullable = false)
     private int unidades;
 
     @Column(nullable = false, length = 300)
     private String descripcion;
 
-    @Positive
+    @PositiveOrZero
     @Column(nullable = false)
     private double precio;
 

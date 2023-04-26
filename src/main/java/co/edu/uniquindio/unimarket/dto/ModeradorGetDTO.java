@@ -9,16 +9,12 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class UsuarioGetDTO {
+public class ModeradorGetDTO {
 
     private String cedula;
 
     private String nombre;
 
     private String email;
-
-    private String direccion;
-
-    private String telefono;
 
 }

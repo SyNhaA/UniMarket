@@ -1,7 +1,7 @@
 package co.edu.uniquindio.unimarket.modelo;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Positive;
+import jakarta.validation.constraints.PositiveOrZero;
 import lombok.*;
 
 import java.io.Serializable;
@@ -31,7 +31,7 @@ public class Compra implements Serializable {
     @Column(nullable = false)
     private LocalDateTime fechaCompra;
 
-    @Positive
+    @PositiveOrZero
     @Column(nullable = false)
     private double total;
 

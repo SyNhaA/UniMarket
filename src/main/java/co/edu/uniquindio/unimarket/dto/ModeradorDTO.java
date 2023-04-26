@@ -10,7 +10,7 @@ import org.hibernate.validator.constraints.Length;
 @AllArgsConstructor
 @Getter
 @Setter
-public class UsuarioDTO {
+public class ModeradorDTO {
 
     @NotNull
     @NotBlank
@@ -31,15 +31,5 @@ public class UsuarioDTO {
     @NotBlank
     @Length(max = 30, message = "La contraseña debe tener máximo 30 caracteres")
     private String password;
-
-    @NotNull
-    @NotBlank
-    @Length(max = 100, message = "La dirección debe tener máximo 100 caracteres")
-    private String direccion;
-
-    @NotNull
-    @NotBlank
-    @Length(max = 10, message = "El teléfono debe tener máximo 10 caracteres")
-    private String telefono;
 
 }
