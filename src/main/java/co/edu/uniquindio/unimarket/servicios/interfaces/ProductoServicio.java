@@ -1,32 +1,38 @@
 package co.edu.uniquindio.unimarket.servicios.interfaces;
 
-import co.edu.uniquindio.unimarket.dto.ProductoDTO;
-import co.edu.uniquindio.unimarket.dto.ProductoGetDTO;
 import co.edu.uniquindio.unimarket.modelo.Categoria;
+import co.edu.uniquindio.unimarket.modelo.Producto;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 import java.util.List;
 
 public interface ProductoServicio {
 
+    Producto registrarProducto(Producto producto);
 
-    int crearProducto(ProductoDTO productoDTO) throws Exception;
+    void actualizarProducto(Producto producto, int idProducto) throws Exception;
 
-    int actualizarProducto(int codigoProducto, ProductoDTO productoDTO) throws Exception;
+    void eliminarProducto(int idProducto) throws Exception;
 
-    int actualizarUnidades(int codigoProducto, int unidades) throws Exception;
+    Producto obtenerProducto(int idProducto) throws Exception;
 
-    int eliminarProducto(int codigoProducto) throws Exception;
+    List<Producto> listarProductos();
 
-    ProductoGetDTO obtenerProducto(int codigoProducto) throws Exception;
+    List<Producto> listarProductosPorNombre(String nombre);
 
-    List<ProductoGetDTO> listarProductosUsuario(int codigoUsuario) throws Exception;
+    List<Producto> listarProductosPorCategoria(Categoria categoria);
 
-    List<ProductoGetDTO> listarProductosCategoria(Categoria categoria) throws Exception;
+    List<Producto> listarProductosPorPrecio(double precioMinimo, double precioMaximo);
 
-    List<ProductoGetDTO> listarProductosFavoritos(int codigoUsuario) throws Exception;
+    List<Producto> listarProductosPorNombreYCategorias(String nombre, Categoria categoria);
 
-    List<ProductoGetDTO> listarProductosNombre(String nombre) throws Exception;
+    List<Producto> listarProductosPaginados(Pageable pageable);
 
-    List<ProductoGetDTO> listarProductosPrecio(float precioMinimo, float precioMaximo) throws Exception;
+    Page<Producto> buscarProductosPaginados(String termino, Pageable pageable);
+
+    void aumentarVisitas(int idProducto) throws Exception;
+
+    List<Producto> listarProductosPorVendedor(String correo);
 
 }
