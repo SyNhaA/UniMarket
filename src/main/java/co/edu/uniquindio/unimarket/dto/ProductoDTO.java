@@ -44,7 +44,7 @@ public class ProductoDTO {
     @NotNull
     @NotBlank
     @Length(max = 10, message = "El código del vendedor debe tener máximo 10 caracteres")
-    private String codigoVendedor;
+    private String cedulaVendedor;
 
     private List<ImagenDTO> imagenes;
 

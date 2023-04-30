@@ -1,5 +1,6 @@
 package co.edu.uniquindio.unimarket.servicios.interfaces;
 
+import co.edu.uniquindio.unimarket.dto.ProductoDTO;
 import co.edu.uniquindio.unimarket.modelo.Categoria;
 import co.edu.uniquindio.unimarket.modelo.Producto;
 import org.springframework.data.domain.Page;
@@ -9,9 +10,13 @@ import java.util.List;
 
 public interface ProductoServicio {
 
-    Producto registrarProducto(Producto producto);
+    int crearProducto(ProductoDTO productoDTO);
 
     void actualizarProducto(Producto producto, int idProducto) throws Exception;
+
+    int actualizarProducto(int codigoProducto, ProductoDTO productoDTO) throws Exception;
+
+    int actualizarUnidades(int codigoProducto, int unidades) throws Exception;
 
     void eliminarProducto(int idProducto) throws Exception;
 
@@ -20,6 +25,8 @@ public interface ProductoServicio {
     List<Producto> listarProductos();
 
     List<Producto> listarProductosPorNombre(String nombre);
+
+    List<Producto> listarProductosUsuario(int codigoUsuario) throws Exception;
 
     List<Producto> listarProductosPorCategoria(Categoria categoria);
 

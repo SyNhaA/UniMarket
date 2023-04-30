@@ -30,7 +30,7 @@ public interface ProductoRepo extends JpaRepository<Producto, Integer> {
     List<Producto> listarProductosNombre(String nombre, Pageable paginador, Sort sort);
 
     // Query para listar los productos por nombre, categoria y por pagina, y ordenados por un atributo especifico
-    @Query("select p from Producto p where p.nombre like concat( '%', :nombre, '%' ) and p.categoria = :categoria and p.activo = true")
+    @Query("select p from Producto 8p where p.nombre like concat( '%', :nombre, '%' ) and p.categoria = :categoria and p.activo = true")
     List<Producto> listarProductosNombreCategoria(String nombre, Categoria categoria, Pageable paginador, Sort sort);
 
     // Query para listar los productos por precio y por pagina, y ordenados por un atributo especifico
