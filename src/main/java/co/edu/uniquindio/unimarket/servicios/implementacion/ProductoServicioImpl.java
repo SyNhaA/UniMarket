@@ -6,35 +6,40 @@ import co.edu.uniquindio.unimarket.modelo.Producto;
 import co.edu.uniquindio.unimarket.modelo.Usuario;
 import co.edu.uniquindio.unimarket.repositorios.ProductoRepo;
 import co.edu.uniquindio.unimarket.servicios.interfaces.ProductoServicio;
+import lombok.AllArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
+@AllArgsConstructor
 public class ProductoServicioImpl implements ProductoServicio {
 
     private final ProductoRepo productoRepo;
 
-    public ProductoServicioImpl(ProductoRepo productoRepo) {
-        this.productoRepo = productoRepo;
+    @Override
+    public void actualizarProducto(Producto producto) throws Exception {
+        Producto productoExist = productoRepo.findById(producto.getId()).orElse(null);
+        if (producto == null) {
+            throw new Exception("El producto no existe");
+        }
+        productoRepo.save(producto);
     }
 
     @Override
-    public void actualizarProducto(Producto producto, int idProducto) throws Exception {
+    public int crearProducto(ProductoDTO productoDTO) throws Exception {
+        Producto producto = convertirDTO(productoDTO);
+        LocalDateTime fecha = LocalDateTime.now();
 
-    }
-
-    @Override
-    public int crearProducto(ProductoDTO productoDTO) {
+        producto.setFechaCreado(fecha);
+        productoRepo.save(producto);
         return 0;
     }
 
-    @Override
-    public int actualizarProducto(int codigoProducto, ProductoDTO productoDTO) throws Exception {
-        return 0;
-    }
+
 
     @Override
     public int actualizarUnidades(int codigoProducto, int unidades) throws Exception {
@@ -116,4 +121,5 @@ public class ProductoServicioImpl implements ProductoServicio {
         producto.setCategoria(productoDTO.getCategoria());
         return producto;
     }
+
 }

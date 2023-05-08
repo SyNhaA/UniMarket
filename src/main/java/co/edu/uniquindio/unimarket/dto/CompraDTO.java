@@ -25,5 +25,7 @@ public class CompraDTO {
     @Length(max = 50, message = "El medio de pago debe tener máximo 50 caracteres")
     private MedioPago medioPago;
 
+    private double total;
+
     private List<DetalleCompraDTO> detalleCompraDTO;
 }

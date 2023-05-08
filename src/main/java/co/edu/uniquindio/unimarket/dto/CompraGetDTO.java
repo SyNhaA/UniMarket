@@ -12,6 +12,9 @@ import java.util.List;
 @Getter
 @Setter
 public class CompraGetDTO {
+    public CompraGetDTO() {
+
+    }
 
     private int id;
 
@@ -24,5 +27,6 @@ public class CompraGetDTO {
     private MedioPago medioPago;
 
     private List<DetalleCompraDTO> detalleCompraDTO;
+
 
 }

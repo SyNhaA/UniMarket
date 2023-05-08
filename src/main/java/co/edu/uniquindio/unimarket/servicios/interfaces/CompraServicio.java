@@ -7,9 +7,9 @@ import java.util.List;
 
 public interface CompraServicio {
 
-    int crearCompra(CompraDTO compraDTO);
+    int crearCompra(CompraDTO compraDTO) throws Exception;
 
-    List<CompraGetDTO> listarCompras(int codigoUsuario);
+    List<CompraGetDTO> listarCompras(String codigoUsuario);
 
     CompraGetDTO obtenerCompra(int codigoCompra);
 

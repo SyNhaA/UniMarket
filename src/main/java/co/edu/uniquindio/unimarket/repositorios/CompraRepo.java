@@ -12,9 +12,13 @@ import java.util.List;
 @Repository
 public interface CompraRepo extends JpaRepository<Compra, Integer> {
 
-    // Query para listar las compras de un usuario
+    //Query para listar las compras de un usuario segun Cedula
+    @Query("select c from Compra c where c.usuario.cedula = :cedula")
+    List<Compra> listarComprasUsuarioPorCedula(String cedula);
+
+    // Query para listar las compras de un usuario segun correo
     @Query("select c from Compra c where c.usuario.email = :correo")
-    List<Compra> listarComprasUsuario(String correo);
+    List<Compra> listarComprasUsuarioPorCorreo(String correo);
 
     // Query para listar las compras de un usuario en un rango de fechas
     @Query("select c from Compra c where c.usuario.email = :correo and c.fechaCompra between :fechaInicio and :fechaFin")

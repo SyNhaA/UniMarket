@@ -13,6 +13,10 @@ import lombok.Setter;
 @Setter
 public class DetalleCompraDTO {
 
+    public DetalleCompraDTO() {
+
+    }
+
     @NotNull
     @NotBlank
     @Positive(message = "El código del producto debe ser positivo")
@@ -32,5 +36,6 @@ public class DetalleCompraDTO {
     @NotBlank
     @PositiveOrZero(message = "El precio debe ser positivo")
     private double precio;
+
 
 }
