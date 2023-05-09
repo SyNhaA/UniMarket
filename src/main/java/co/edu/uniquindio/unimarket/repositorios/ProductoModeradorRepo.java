@@ -1,6 +1,7 @@
 package co.edu.uniquindio.unimarket.repositorios;
 
 import co.edu.uniquindio.unimarket.modelo.EstadoProducto;
+import co.edu.uniquindio.unimarket.modelo.Producto;
 import co.edu.uniquindio.unimarket.modelo.ProductoModerador;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -17,8 +18,8 @@ public interface ProductoModeradorRepo extends JpaRepository<ProductoModerador, 
     ProductoModerador findByEstadoProducto(EstadoProducto estadoProducto);
 
     // Query para listar los productos de un moderador, por pagina
-    @Query("select pm from ProductoModerador pm where pm.moderador.email = :correo")
-    List<ProductoModerador> listarProductosModerador(String correo, Pageable paginador);
+    @Query("select pm.producto from ProductoModerador pm where pm.moderador.email = :correo")
+    List<Producto> listarProductosModerador(String correo);
 
     // Query para listar los productos aprobados entre dos fechas
     @Query("select pm from ProductoModerador pm where pm.estadoProducto = 'APROBADO' and pm.fecha between :fechaInicio and :fechaFin")

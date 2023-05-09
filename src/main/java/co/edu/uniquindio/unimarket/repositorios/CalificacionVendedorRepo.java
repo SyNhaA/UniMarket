@@ -7,8 +7,9 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+
 @Repository
-public interface CalificacionVendedorRepo extends JpaRepository<CalificacionVendedor, Integer> {
+public interface   CalificacionVendedorRepo extends JpaRepository<CalificacionVendedor, Integer> {
 
     // Query para listar las calificaciones de un vendedor
     @Query("select c from CalificacionVendedor c where c.vendedor.email = :correo")

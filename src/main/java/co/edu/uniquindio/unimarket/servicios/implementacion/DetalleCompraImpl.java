@@ -7,17 +7,20 @@ import co.edu.uniquindio.unimarket.modelo.DetalleCompra;
 import co.edu.uniquindio.unimarket.repositorios.DetalleCompraRepo;
 import co.edu.uniquindio.unimarket.servicios.interfaces.DetalleCompraService;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Service
-@AllArgsConstructor
 public class DetalleCompraImpl implements DetalleCompraService {
 
     private final DetalleCompraRepo detalleCompraRepo;
-    private final CompraServicioImpl compraServicio;
+
+    public DetalleCompraImpl(DetalleCompraRepo detalleCompraRepo) {
+        this.detalleCompraRepo = detalleCompraRepo;
+    }
 
 
     @Override
@@ -27,10 +30,22 @@ public class DetalleCompraImpl implements DetalleCompraService {
         List<DetalleCompraDTO> detalleCompraDTOS = new ArrayList<>();
 
         for (DetalleCompra detalle: detallesCompra) {
-            detalleCompraDTOS.add(compraServicio.convertir_de_DealleCompra_a_DetalleCompraDTO(detalle));
+            detalleCompraDTOS.add(convertir_de_DealleCompra_a_DetalleCompraDTO(detalle));
         }
 
         return detalleCompraDTOS;
+    }
+
+    public DetalleCompraDTO convertir_de_DealleCompra_a_DetalleCompraDTO(DetalleCompra detalleCompra) {
+
+        DetalleCompraDTO detalleCompraDTO = new DetalleCompraDTO();
+
+        detalleCompraDTO.setCodigoProducto(detalleCompra.getProducto().getId());
+        detalleCompraDTO.setCodigoCompra(detalleCompra.getCompra().getId());
+        detalleCompraDTO.setUnidades(detalleCompra.getUnidades());
+        detalleCompraDTO.setPrecio(detalleCompra.getPrecioProducto());
+
+        return detalleCompraDTO;
     }
 
 }

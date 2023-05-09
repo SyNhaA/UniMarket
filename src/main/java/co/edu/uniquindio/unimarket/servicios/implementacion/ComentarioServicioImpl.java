@@ -8,6 +8,7 @@ import co.edu.uniquindio.unimarket.modelo.Usuario;
 import co.edu.uniquindio.unimarket.repositorios.ComentarioRepo;
 import co.edu.uniquindio.unimarket.servicios.interfaces.ComentarioServicio;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -16,12 +17,17 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-@AllArgsConstructor
 public class ComentarioServicioImpl implements ComentarioServicio {
 
     private final ComentarioRepo comentarioRepo;
     private final UsuarioServicioImpl usuarioServicio;
     private final ProductoServicioImpl productoServicio;
+
+    public ComentarioServicioImpl(ComentarioRepo comentarioRepo, UsuarioServicioImpl usuarioServicio, ProductoServicioImpl productoServicio) {
+        this.comentarioRepo = comentarioRepo;
+        this.usuarioServicio = usuarioServicio;
+        this.productoServicio = productoServicio;
+    }
 
     @Override
     public int crearComentario(ComentarioDTO comentarioDTO) throws Exception {

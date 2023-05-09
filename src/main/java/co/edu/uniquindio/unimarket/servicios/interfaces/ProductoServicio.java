@@ -24,7 +24,7 @@ public interface ProductoServicio {
 
     List<Producto> listarProductosPorNombre(String nombre);
 
-    List<Producto> listarProductosUsuario(int codigoUsuario) throws Exception;
+    List<Producto> listarProductosUsuario(String correo) throws Exception;
 
     List<Producto> listarProductosPorCategoria(Categoria categoria);
 

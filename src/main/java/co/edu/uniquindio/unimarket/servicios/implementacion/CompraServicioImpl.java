@@ -21,7 +21,6 @@ public class CompraServicioImpl implements CompraServicio {
 
     private final CompraRepo compraRepo;
     private final UsuarioServicioImpl usuarioServicio;
-    private final DetalleCompraImpl detalleCompraServicio;
     private final ProductoServicioImpl productoServicio;
 
 
