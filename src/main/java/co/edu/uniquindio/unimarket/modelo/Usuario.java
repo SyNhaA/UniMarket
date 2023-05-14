@@ -44,7 +44,7 @@ public class Usuario extends Persona implements Serializable {
     @Column(length = 100, nullable = false)
     private String direccion;
 
-    @Column(length = 10, nullable = false)
+    @Column(length = 30, nullable = false)
     private String telefono;
 
 }

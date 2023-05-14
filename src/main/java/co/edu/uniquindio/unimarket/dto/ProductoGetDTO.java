@@ -14,6 +14,9 @@ import java.util.List;
 @Setter
 public class ProductoGetDTO {
 
+    public ProductoGetDTO() {
+    }
+
     private int codigo;
 
     private boolean activo;
@@ -32,7 +35,7 @@ public class ProductoGetDTO {
 
     private String codigoVendedor;
 
-    private List<ImagenDTO> imagenes;
+    private List<String> imagenes;
 
     private Categoria categorias;
 }

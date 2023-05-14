@@ -37,8 +37,8 @@ public class Producto implements Serializable {
     @OneToMany(mappedBy = "producto")
     private List<DetalleCompra> listaDetalleCompras;
 
-    @OneToMany(mappedBy = "producto")
-    private List<Imagen> listaImagenes;
+    @ElementCollection
+    private List<String> listaImagenes;
 
     @OneToMany(mappedBy = "producto")
     private List<CalificacionProducto> listaCalificaciones;
@@ -73,4 +73,5 @@ public class Producto implements Serializable {
     @Enumerated(EnumType.STRING)
     @Column(nullable = false, length = 30)
     private Categoria categoria;
+
 }

@@ -17,26 +17,35 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
+@AllArgsConstructor
 public class ComentarioServicioImpl implements ComentarioServicio {
 
     private final ComentarioRepo comentarioRepo;
     private final UsuarioServicioImpl usuarioServicio;
     private final ProductoServicioImpl productoServicio;
 
-    public ComentarioServicioImpl(ComentarioRepo comentarioRepo, UsuarioServicioImpl usuarioServicio, ProductoServicioImpl productoServicio) {
-        this.comentarioRepo = comentarioRepo;
-        this.usuarioServicio = usuarioServicio;
-        this.productoServicio = productoServicio;
-    }
-
     @Override
     public int crearComentario(ComentarioDTO comentarioDTO) throws Exception {
 
+        Usuario usuario = usuarioServicio.obtenerUsuario(comentarioDTO.getCedulaUsuario());
+        Producto producto = productoServicio.obtenerProducto(comentarioDTO.getCodigoProducto());
+
+        if (usuario == null){
+            throw new Exception("El código "+usuario.getCedula()+" no está asociado a ningún usuario");
+        }
+        if (producto == null){
+            throw new Exception("El código "+producto.getId()+" no está asociado a ningún producto");
+        }
+
         LocalDateTime fechaActual = LocalDateTime.now();
         Comentario comentario = convertirComentarioDTOaComentario(comentarioDTO);
+
         comentario.setFechaCreacion(fechaActual);
-        
-        return comentarioRepo.save(comentario).getId();
+        comentario.setUsuario(usuario);
+        comentario.setProducto(producto);
+
+        comentarioRepo.save(comentario);
+        return 0;
     }
 
     @Override
@@ -83,19 +92,9 @@ public class ComentarioServicioImpl implements ComentarioServicio {
         }
     }
     public Comentario convertirComentarioDTOaComentario(ComentarioDTO comentarioDTO) throws Exception {
-        Usuario usuario = usuarioServicio.obtenerUsuario(comentarioDTO.getCedulaUsuario());
-        Producto producto = productoServicio.obtenerProducto(comentarioDTO.getCodigoProducto());
 
-        if (usuario == null){
-            throw new Exception("El código "+usuario.getCedula()+" no está asociado a ningún usuario");
-        }
-        if (producto == null){
-            throw new Exception("El código "+producto.getId()+" no está asociado a ningún producto");
-        }
 
         Comentario comentario = new Comentario();
-        comentario.setProducto(producto);
-        comentario.setUsuario(usuario);
         comentario.setMensaje(comentarioDTO.getMensaje());
 
         return comentario;

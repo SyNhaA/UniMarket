@@ -1,12 +1,16 @@
 package co.edu.uniquindio.unimarket.repositorios;
 
 import co.edu.uniquindio.unimarket.modelo.Compra;
+import co.edu.uniquindio.unimarket.modelo.Producto;
 import co.edu.uniquindio.unimarket.modelo.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.Month;
+import java.time.Year;
 import java.util.List;
 
 @Repository
@@ -32,4 +36,10 @@ public interface CompraRepo extends JpaRepository<Compra, Integer> {
     @Query("select c.usuario from Compra c join c.listaDetalleCompras dc where dc.producto.id = :idProducto")
     List<Usuario> listarUsuariosCompradoresProducto(int idProducto);
 
+    //SEGUIMIENTO
+    @Query("select c from Compra c where year(c.fechaCompra) = :anio and month(c.fechaCompra) = :mes")
+    List<Compra> listaDeComprasSegunMesyFecha(Year anio, Month mes);
+
+    @Query("select distinct p from Compra c join c.listaDetalleCompras dc join dc.producto p where  c.usuario.cedula =:cedula")
+    List<Producto> listaDeProductoDeUnUsuarioSinRepetir(String cedula);
 }

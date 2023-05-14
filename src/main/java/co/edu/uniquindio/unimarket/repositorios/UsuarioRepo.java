@@ -10,6 +10,8 @@ import java.util.List;
 @Repository
 public interface UsuarioRepo extends JpaRepository<Usuario, String> {
 
+    @Query("select u from Usuario u where u.cedula = :cedula")
+    Usuario obtenerUsuario(String cedula);
     // Query para buscar un usuario por su correo
     Usuario findByEmail(String correo);
 

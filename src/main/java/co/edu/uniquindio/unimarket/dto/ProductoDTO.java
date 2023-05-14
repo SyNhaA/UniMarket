@@ -10,6 +10,7 @@ import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.validator.constraints.Length;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @AllArgsConstructor
@@ -21,6 +22,10 @@ public class ProductoDTO {
     @NotNull
     @Length(max = 100, message = "El nombre debe tener máximo 100 caracteres")
     private String nombre;
+
+    @NotBlank
+    @NotNull
+    private LocalDateTime fechaVencimiento;
 
     @NotBlank
     @NotNull
@@ -46,7 +51,7 @@ public class ProductoDTO {
     @Length(max = 10, message = "El código del vendedor debe tener máximo 10 caracteres")
     private String cedulaVendedor;
 
-    private List<ImagenDTO> imagenes;
+    private List<String> imagenes;
 
     @NotNull
     @NotBlank

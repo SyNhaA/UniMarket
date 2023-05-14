@@ -3,16 +3,28 @@ package co.edu.uniquindio.unimarket.servicios.implementacion;
 import co.edu.uniquindio.unimarket.dto.UsuarioDTO;
 import co.edu.uniquindio.unimarket.dto.UsuarioGetDTO;
 import co.edu.uniquindio.unimarket.modelo.Usuario;
+import co.edu.uniquindio.unimarket.repositorios.UsuarioRepo;
 import co.edu.uniquindio.unimarket.servicios.interfaces.UsuarioServicio;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 @AllArgsConstructor
 public class UsuarioServicioImpl implements UsuarioServicio {
 
+    @Autowired
+    private final UsuarioRepo usuarioRepo;
+
     @Override
     public int crearUsuario(UsuarioDTO usuarioDTO) throws Exception {
+
+        Usuario buscado = usuarioRepo.findByEmail(usuarioDTO.getEmail());
+
+        if(buscado!=null){
+            throw new Exception("El correo "+usuarioDTO.getEmail()+" ya está en uso");
+        }
+
         return 0;
     }
 
@@ -27,7 +39,7 @@ public class UsuarioServicioImpl implements UsuarioServicio {
     }
 
     @Override
-    public Usuario obtenerUsuario(String codigoUsuario) throws Exception {
-        return null;
+    public Usuario obtenerUsuario(String cedula) throws Exception {
+        return usuarioRepo.obtenerUsuario(cedula);
     }
 }

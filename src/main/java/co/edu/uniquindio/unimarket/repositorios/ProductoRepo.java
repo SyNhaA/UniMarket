@@ -13,6 +13,8 @@ import java.util.List;
 @Repository
 public interface ProductoRepo extends JpaRepository<Producto, Integer> {
 
+    @Query("select p from Producto p where p.id =: id")
+    Producto obtenerPorID(int id);
     // Query para listar los productos activos por pagina y ordenados por un atributo especifico
     @Query("select p from Producto p where p.activo = true")
     List<Producto> listarProductos(Pageable paginador);
@@ -40,5 +42,14 @@ public interface ProductoRepo extends JpaRepository<Producto, Integer> {
     // Query para listar los productos por precio, categoria y por pagina, y ordenados por un atributo especifico
     @Query("select p from Producto p where p.precio between :precioMinimo and :precioMaximo and p.categoria = :categoria and p.activo = true")
     List<Producto> listarProductosPrecioCategoria(double precioMinimo, double precioMaximo, Categoria categoria, Pageable paginador);
+
+    // Query para obtener el producto mas caro dada una categoria especifica
+    @Query("select p from Producto p where p.categoria = :categoria and p.precio = (select max(p.precio) from Producto p where p.categoria = :categoria)")
+    Producto obtenerProductoMasCaroCategoria(Categoria categoria);
+
+
+    // Query para obtener el producto mas barato dada una categoria especifica
+    @Query("select p from Producto p where p.categoria = :categoria and p.precio = (select min(p.precio) from Producto p where p.categoria = :categoria)")
+    Producto obtenerProductoMasBaratoCategoria(Categoria categoria);
 
 }
