@@ -4,6 +4,8 @@ import co.edu.uniquindio.unimarket.dto.UsuarioDTO;
 import co.edu.uniquindio.unimarket.dto.UsuarioGetDTO;
 import co.edu.uniquindio.unimarket.modelo.Usuario;
 
+import java.util.List;
+
 public interface UsuarioServicio {
 
 
@@ -15,4 +17,5 @@ public interface UsuarioServicio {
 
     Usuario obtenerUsuario(String codigoUsuario) throws Exception;
 
+    List<UsuarioGetDTO> listarUsuarios();
 }

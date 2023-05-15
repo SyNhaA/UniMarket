@@ -37,10 +37,7 @@ public class ComentarioServicioImpl implements ComentarioServicio {
             throw new Exception("El código "+producto.getId()+" no está asociado a ningún producto");
         }
 
-        LocalDateTime fechaActual = LocalDateTime.now();
         Comentario comentario = convertirComentarioDTOaComentario(comentarioDTO);
-
-        comentario.setFechaCreacion(fechaActual);
         comentario.setUsuario(usuario);
         comentario.setProducto(producto);
 
@@ -92,24 +89,21 @@ public class ComentarioServicioImpl implements ComentarioServicio {
         }
     }
     public Comentario convertirComentarioDTOaComentario(ComentarioDTO comentarioDTO) throws Exception {
-
-
         Comentario comentario = new Comentario();
         comentario.setMensaje(comentarioDTO.getMensaje());
-
+        comentario.setFechaCreacion(comentarioDTO.getFechaCreacion());
         return comentario;
     }
 
     private ComentarioGetDTO convertirComentarioAGetDTO(Comentario comentario) {
 
         ComentarioGetDTO comentarioGetDTO = new ComentarioGetDTO(
-
                 comentario.getId(),
                 comentario.getFechaCreacion(),
                 comentario.getMensaje(),
                 comentario.getUsuario().getCedula(),
-                comentario.getProducto().getId());
-
+                comentario.getProducto().getId()
+        );
         return  comentarioGetDTO;
     }
 }

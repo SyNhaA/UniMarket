@@ -7,6 +7,7 @@ import co.edu.uniquindio.unimarket.dto.ProductoGetDTO;
 import co.edu.uniquindio.unimarket.modelo.Compra;
 import co.edu.uniquindio.unimarket.modelo.DetalleCompra;
 import co.edu.uniquindio.unimarket.modelo.Producto;
+import co.edu.uniquindio.unimarket.modelo.Usuario;
 import co.edu.uniquindio.unimarket.repositorios.CompraRepo;
 import co.edu.uniquindio.unimarket.servicios.interfaces.CompraServicio;
 import lombok.AllArgsConstructor;
@@ -32,9 +33,18 @@ public class CompraServicioImpl implements CompraServicio {
     @Override
     public int crearCompra(CompraDTO compraDTO) throws Exception {
 
+        if(compraDTO == null){
+            throw new Exception("Porfavor verifique bien los datos");
+        }
+        Usuario usuario = usuarioServicio.obtenerUsuario(compraDTO.getCedulaUsuario());
+        if(usuario == null){
+            throw new Exception("El usuario no existe");
+        }
         Compra compra = convertir_de_CompraDTO_a_Compra(compraDTO);
+        compra.setUsuario(usuario);
 
-        return compraRepo.save(compra).getId();
+        compraRepo.save(compra);
+        return 0;
     }
 
     @Override
@@ -77,7 +87,7 @@ public class CompraServicioImpl implements CompraServicio {
             throw new Exception("La fecha de consulta no puede ser posterior a la fecha actual.");
         }
 
-        List<Compra> comprasSegunMesyAño = compraRepo.listaDeComprasSegunMesyFecha(anio, mes);
+        List<Compra> comprasSegunMesyAño = compraRepo.listaDeComprasSegunMesyFecha(anio.getValue(), mes.getValue());
         double total = 0;
         for (Compra compra:comprasSegunMesyAño) {
             total += compra.getTotal();
@@ -120,15 +130,14 @@ public class CompraServicioImpl implements CompraServicio {
         compra.setFechaCompra(LocalDateTime.now());
         compra.setTotal(compraDTO.getTotal());
         compra.setMedioPago(compraDTO.getMedioPago());
-        compra.setUsuario(usuarioServicio.obtenerUsuario(compraDTO.getCedulaUsuario()));
 
-        List<DetalleCompra> listaDetalleCompra = new ArrayList<>();
-
-        for (DetalleCompraDTO detalleCompraDTO : compraDTO.getDetalleCompraDTO()) {
-            listaDetalleCompra.add(convertir_de_DetalleCompraDTO_A_DetalleCompra(detalleCompraDTO));
-        }
-
-        compra.setListaDetalleCompras(listaDetalleCompra);
+//        List<DetalleCompra> listaDetalleCompra = new ArrayList<>();
+//
+//        for (DetalleCompraDTO detalleCompraDTO : compraDTO.getDetalleCompraDTO()) {
+//            listaDetalleCompra.add(convertir_de_DetalleCompraDTO_A_DetalleCompra(detalleCompraDTO));
+//        }
+//
+//        compra.setListaDetalleCompras(listaDetalleCompra);
 
         return compra;
     }

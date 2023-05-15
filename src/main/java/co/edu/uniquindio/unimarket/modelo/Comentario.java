@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @ToString
-@NoArgsConstructor
+@AllArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Entity
 public class Comentario implements Serializable {
@@ -33,4 +33,11 @@ public class Comentario implements Serializable {
 
     @Column(nullable = false)
     private LocalDateTime fechaCreacion;
+
+    public Comentario() {
+
+    }
+    public Comentario(Usuario obtenerUsuario, Producto obtenerProducto, String mensaje, LocalDateTime fechaCreacion) {
+
+    }
 }

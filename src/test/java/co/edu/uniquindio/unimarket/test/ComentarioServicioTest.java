@@ -13,6 +13,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.jdbc.Sql;
 
+import java.time.LocalDateTime;
+
 @SpringBootTest
 @Transactional
 public class ComentarioServicioTest {
@@ -31,7 +33,8 @@ public class ComentarioServicioTest {
         ComentarioDTO comentarioDTO = new ComentarioDTO(
                 "Muy bonito",
                 "0000000001",
-                1
+                1,
+                LocalDateTime.now()
         );
         int verificador = comentarioServicio.crearComentario(comentarioDTO);
         System.out.println(verificador);

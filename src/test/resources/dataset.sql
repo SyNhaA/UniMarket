@@ -41,3 +41,7 @@ insert into comentario values (7, "2023-04-27 21:00:00", "Muy satisfecho con mi 
 insert into comentario values (8, "2023-04-27 22:30:00", "No funcionó correctamente desde el primer día", 9, "0000000001");
 insert into comentario values (9, "2023-04-28 10:00:00", "El producto llegó en perfectas condiciones", 4, "0000000001");
 insert into comentario values (10, "2023-04-28 11:30:00", "Cumplió con mis expectativas", 8, "0000000001");
+
+insert into compra values (1, "2023-04-27 12:00:00", "EFECTIVO", 15000, "0000000001");
+
+insert into detallecompra values (1, 50000, 12, 1, 1);

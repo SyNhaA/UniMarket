@@ -8,6 +8,8 @@ import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.validator.constraints.Length;
 
+import java.time.LocalDateTime;
+
 @AllArgsConstructor
 @Getter
 @Setter
@@ -27,5 +29,7 @@ public class ComentarioDTO {
     @NotBlank
     @Positive(message = "El codigo del producto debe ser positivo")
     private int codigoProducto;
+
+    private LocalDateTime fechaCreacion;
 
 }

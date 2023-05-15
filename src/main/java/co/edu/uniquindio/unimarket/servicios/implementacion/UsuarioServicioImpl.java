@@ -1,20 +1,23 @@
 package co.edu.uniquindio.unimarket.servicios.implementacion;
 
 import co.edu.uniquindio.unimarket.dto.UsuarioDTO;
-import co.edu.uniquindio.unimarket.dto.UsuarioGetDTO;
 import co.edu.uniquindio.unimarket.modelo.Usuario;
 import co.edu.uniquindio.unimarket.repositorios.UsuarioRepo;
 import co.edu.uniquindio.unimarket.servicios.interfaces.UsuarioServicio;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
 @AllArgsConstructor
 public class UsuarioServicioImpl implements UsuarioServicio {
 
-    @Autowired
     private final UsuarioRepo usuarioRepo;
+
+    private final PasswordEncoder passwordEncoder;
+
+
 
     @Override
     public int crearUsuario(UsuarioDTO usuarioDTO) throws Exception {
